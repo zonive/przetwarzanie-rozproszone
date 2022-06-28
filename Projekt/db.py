@@ -29,9 +29,15 @@ def new():
     cardId = str(card)
     cardKey = str(key)
     litres = str(input("Type new liters state:"))
+    
+    # cardId = "868581146633"
+    # cardKey = "tes1t"
 
     # data1 = '{"firstName":"' +firstName+ '" ,"lastName":"' +lastName+ '","cardId":"' +cardId+'","cardKey":"' +cardKey+ '","litres":' + litres+ '}'
-    data1 = "{\"firstName\":\"" +firstName+ "\" ,\"lastName\":\"" +lastName+ "\",\"cardId\":\"" +cardId+ "\",\"cardKey\":\"" +cardKey+ "\",\"litres\":" + litres+ "}"
+    # data1 = {"firstName\":" +firstName+ ",\"lastName\":" +lastName+ ",\"cardId\":" +cardId+ ",\"cardKey\":" +cardKey+  ",\"litres\":" + litres}
+    data1 = {'"firstName":"' +firstName+ '" ,"lastName":"' +lastName+ '","cardId":"' +cardId+ '","cardKey":"' +cardKey+ '","litres":' + litres}
+
+    data1 = {"firstName":"Test" ,"lastName":"TestHard","cardId":"868581146633","cardKey":"test","litres":2222}
     print(data1)
     headers = {"Content-Type": "application/json"}
     response = requests.put("https://petroljp.azurewebsites.net/new",headers=headers, json = data1)

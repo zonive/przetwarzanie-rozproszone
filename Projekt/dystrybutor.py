@@ -93,6 +93,7 @@ def auth():
     id = response.text
     if id == "ERR":
         print("Auth Failed")
+        inf("3333")
         return "ERR"
     else:
         print("Auth sucessful")
